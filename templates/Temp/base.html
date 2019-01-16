@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <link href="../static/semantic.min.css" rel="stylesheet" type="text/css">
+        <script src="../static/jquery.min.js"></script>
+        <script src="../static/semantic.min.js"></script>
+        <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    {% include './Temp/head.html' %}
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div>
+        {% block footer %}
+        {% endblock %}
+    </div>
+{% include './Temp/foot.html' %}
+</body>
+</html>

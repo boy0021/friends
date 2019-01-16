@@ -1,0 +1,95 @@
+{% extends "./Temp/base.html" %}
+{% block title %}Homepage{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+
+    <div class="ui  headback ">
+        <div class="ui  son  huge header">
+            <hr size=1.5 color=#fff align=center noshade>
+            欢 &nbsp&nbsp 迎 &nbsp&nbsp  进 &nbsp&nbsp 入<br/>联 &nbsp&nbsp 大 &nbsp&nbsp 空 &nbsp&nbsp 间
+            <hr size=1.5 color=#fff align=center noshade>
+        </div>
+   <a href="#find1" class="tofind" onclick="click_scroll()"><i class="angle double down icon"></i></a>
+    </div>
+
+
+
+    <br><br><br><br><br><br><br><br>
+    <a name="find1" id="find1"></a>
+  <div class="ui stackable very relaxed two column centered grid">
+<div class="ui stripe theming vertical segment">
+<div class="center aligned column">
+    <div class="ui fade reveal">
+        <div class="visible content">
+            <img src="/static/img/logo.png" class="ui icon image">
+        </div>
+        <div class="hidden content">
+            <img src="/static/img/wunai.jpg" class="ui icon image">
+        </div>
+    </div>
+        <h1 class="ui icon header">联大自己的社区 </h1>
+        <p >让联大学子更好的交流学习</p>
+        <p >绝对不是糊弄老师的假期作业:)</p>
+                </div>
+            </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+    <style>
+    .headback{
+        position:relative;
+        height: 100vh;
+        background-image: url('/static/img/back3.jpg') !important;
+        background-size: cover !important;
+    }
+    .son.huge.header{
+        position:absolute;
+        left: 45%;
+        top:8em;
+        color: #fff;
+        font-size: 3em;!important;
+        transform:translateY(-50%);
+    }
+     .angle.double.down.icon{
+        position:absolute;
+        left: 50%;
+        top:90%;
+        color: #fff;
+        font-size: 3em;!important;
+        transform:translateY(-50%);
+    }
+    </style>
+    <script type="text/javascript">
+    function click_scroll() {
+      var scroll_offset = $("#find1").offset().top;
+      $("body,html").animate({
+        // 让body的scrollTop等于div3的top，就实现了滚动
+        scrollTop:scroll_offset
+      },1000);
+    }
+
+
+        $('.ui.headback')
+            .transition({
+            animation :'fly down in',
+            duration  : 2000,
+            interval  : 200
+            });
+
+         $('.son.huge.header')
+           .transition('set looping')
+            .transition('tada', '3000ms');
+
+          $('.angle.double.down.icon')
+           .transition('set looping')
+            .transition('bounce', '2000ms');
+    </script>
+{% endblock %}

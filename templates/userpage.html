@@ -18,7 +18,7 @@
         <img src="/static/img/user01.png" class="ui  circular huge image">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Patrick
+           尼古拉斯·凯亮
         </h2>
       </div>
 
@@ -39,14 +39,14 @@
           <a class="item active" data-tab="first">主页</a>
           <a class="item  " data-tab="second">说说</a>
           <a class="item " data-tab="third">相册</a>
-          <a class="item  " data-tab="four">个人</a>
+          <a class="item  " data-tab="four">个人资料卡</a>
     </div>
 
 
 {#"/static/img/logo.png"#}
 {#主页#}
 
-<div class="ui bottom attached  active tab loading  segment" data-tab="first">
+<div class="ui bottom attached  active tab   segment" data-tab="first">
 
 {% for i in range(0,4) %}
     <div class="ui fluid card">
@@ -86,7 +86,40 @@
 
 {#说说     #}
 <div class="ui bottom attached   tab segment" data-tab="second">
-  说说
+        <div class="ui   form">
+                  <div class="field">
+                      <br>
+                   <h2 class="ui header">
+                  <i class="write icon"></i>
+                  <div class="content">
+                   写说说
+                      <div class="sub header">所感所想皆为远方</div>
+                  </div>
+                </h2>
+                      <br><br>
+                    <textarea rows="20"></textarea>
+                  </div>
+        </div>
+
+    <br><br>
+<div class="ui grid">
+    <div class="one wide column"></div>
+    <div class="four wide column">
+        <button class="ui icon button" onclick="myFunction()">
+   <i class="send icon"></i>发送
+        </button>
+    </div>
+
+    <div class="six wide column"></div>
+    <div class="four wide column">
+    <button class="ui icon button" onclick="myFunction()">
+    <i class="camera retro icon"></i>
+        上传照片
+    </button>
+        </div>
+</div>
+
+    <br><br><br><br><br><br><br><br>
 </div>
 
 
@@ -99,7 +132,28 @@
 
 {#个人#}
 <div class="ui bottom attached tab segment active" data-tab="four">
-  个人
+    <br><br>
+<div class="ui centered card">
+  <div class="image">
+    <img src="/static/img/user01.png">
+  </div>
+  <div class="content">
+    <a class="header">尼古拉斯·凯亮</a>
+    <div class="meta">
+      <span class="date">Joined in 2013</span>
+    </div>
+    <div class="description">
+      个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍个人介绍
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      22 Friends
+    </a>
+  </div>
+</div>
+        <br><br>
 </div>
 
         </div>
@@ -108,6 +162,28 @@
       </div>
     </div>
  </div>
+
+
+    <div class="ui basic modal">
+  <div class="ui icon header">
+    <i class="add circle icon"></i>
+    提示
+  </div>
+  <div class="content">
+    <p>是否上传照片？:)</p>
+  </div>
+  <div class="actions">
+    <div class="ui red basic cancel inverted button">
+      <i class="remove icon"></i>
+      否
+    </div>
+    <div class="ui green ok inverted button">
+      <i class="checkmark icon"></i>
+      是
+    </div>
+  </div>
+</div>
+
 
     <style>
 body{
@@ -135,24 +211,19 @@ body{
        position:relative;
         top: 0em;
     }
-    .son.huge.header{
-        position:absolute;
-        left: 45%;
-        top:8em;
-        color: #fff;
-        font-size: 3em;!important;
-        transform:translateY(-50%);
-    }
-     .angle.double.down.icon{
-        position:absolute;
-        left: 50%;
-        top:90%;
-        color: #fff;
-        font-size: 3em;!important;
-        transform:translateY(-50%);
-    }
+
     </style>
+
+
     <script type="text/javascript">
+
+    function myFunction() {
+      $('.ui.basic.modal')
+          .modal('show')
+        ;
+    }
+
+
 
     $('.menu .item')
       .tab()

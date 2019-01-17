@@ -1,0 +1,72 @@
+{% extends "./Temp/base.html" %}
+{% block title %}Homepage{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+
+    <br><br><br><br><br><br><br>
+
+<div class="ui  container headback">
+<div class="ui middle aligned center aligned grid ">
+
+  <div class="five wide column " id="five_wide_colum">
+    <h2 class="ui blue image header">
+      <img src="/static/img/logo.png" class="ui circular image">
+      <div class="content">
+        登录到账号
+      </div>
+    </h2>
+    <form class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="email" placeholder="邮箱地址">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="密码">
+          </div>
+        </div>
+        <div class="ui fluid large blue submit button">登录</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      新用户？ <a href="login.php#">注册</a>
+    </div>
+  </div>
+
+</div>
+  </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+       <style>
+       #five_wide_colum{
+           background-color: white;
+           border-radius: 15px;
+       }
+      body{
+        position:relative;
+        height: 100vh;
+        background-image: url('/static/img/back6.jpg') !important;
+        background-size: cover !important;
+    }
+       </style>
+
+      <script type="text/javascript">
+
+          $('.ui.container.headback')
+             .transition({
+            animation :'swing down in',
+            duration  : 1500,
+            interval  : 200
+            });
+    </script>
+{% endblock %}

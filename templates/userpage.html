@@ -1,0 +1,186 @@
+{% extends "./Temp/base.html" %}
+{% block title %}Homepage{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+ {% include './Temp/head2.html' %}
+ <div class="ui headback ">
+ <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="ui internally celled grid container">
+
+    <div class="row">
+
+    <div class="ui middle aligned ten column centered grid">
+            <div class="row">
+      <div class="sixteen wide column">
+        <h2 class="ui header">
+        <img src="/static/img/user01.png" class="ui  circular huge image">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Patrick
+        </h2>
+      </div>
+
+    </div>
+</div>
+
+    </div>
+
+  <div class="row">
+    <div class="three wide column">
+
+    </div>
+    <div class="ten wide column">
+
+
+
+      <div class="ui top attached tabular menu">
+          <a class="item active" data-tab="first">主页</a>
+          <a class="item  " data-tab="second">说说</a>
+          <a class="item " data-tab="third">相册</a>
+          <a class="item  " data-tab="four">个人</a>
+    </div>
+
+
+{#"/static/img/logo.png"#}
+{#主页#}
+
+<div class="ui bottom attached  active tab loading  segment" data-tab="first">
+
+{% for i in range(0,4) %}
+    <div class="ui fluid card">
+  <div class="content">
+    <div class="right floated meta">14h</div>
+    <img class="ui avatar image" src="/static/img/logo.png"> Elliot
+  </div>
+  <div class="image">
+    <img src="/static/img/back1.jpg">
+  </div>
+
+           <div class="description">
+      <p>Hello world</p>
+      <p>Hello world Hello world Hello world Hello world Hello world Hello world</p>
+    </div>
+{#         <div class="content">#}
+{#             <p>Hello world!!!!</p>#}
+{#         </div>#}
+  <div class="content">
+    <span class="right floated">
+      <i class="heart outline like icon"></i>
+      17 likes
+    </span>
+    <i class="comment icon"></i>
+    3 comments
+  </div>
+</div>
+
+    <div class="card_class"></div>
+
+{% endfor %}
+
+</div>
+
+
+
+
+{#说说     #}
+<div class="ui bottom attached   tab segment" data-tab="second">
+  说说
+</div>
+
+
+{#相册#}
+<div class="ui bottom attached tab segment active" data-tab="third">
+  相册
+</div>
+
+
+
+{#个人#}
+<div class="ui bottom attached tab segment active" data-tab="four">
+  个人
+</div>
+
+        </div>
+        <div class="three wide column">
+        </div>
+      </div>
+    </div>
+ </div>
+
+    <style>
+body{
+      background-image: url('/static/img/back7.jpg') !important;
+        background-size: cover !important;
+         background-repeat:no-repeat;
+        background-attachment:fixed;
+}
+    .headback{
+        position:relative;
+        height: 80%;
+
+
+    }
+    .card_class{
+        height: 10px;
+        width: 100%;
+    }
+    .ui.middle.aligned.ten.column.centered.grid{
+      position:relative;
+      bottom: 1em;
+    }
+
+    .ui.internally.celled.grid.container{
+       position:relative;
+        top: 0em;
+    }
+    .son.huge.header{
+        position:absolute;
+        left: 45%;
+        top:8em;
+        color: #fff;
+        font-size: 3em;!important;
+        transform:translateY(-50%);
+    }
+     .angle.double.down.icon{
+        position:absolute;
+        left: 50%;
+        top:90%;
+        color: #fff;
+        font-size: 3em;!important;
+        transform:translateY(-50%);
+    }
+    </style>
+    <script type="text/javascript">
+
+    $('.menu .item')
+      .tab()
+    ;
+
+
+    function click_scroll() {
+      var scroll_offset = $("#find1").offset().top;
+      $("body,html").animate({
+        // 让body的scrollTop等于div3的top，就实现了滚动
+        scrollTop:scroll_offset
+      },1000);
+    }
+
+
+        $('.ui.headback')
+            .transition({
+            animation :'fly down in',
+            duration  : 2000,
+            interval  : 200
+            });
+
+         $('.son.huge.header')
+           .transition('set looping')
+            .transition('tada', '3000ms');
+
+          $('.angle.double.down.icon')
+           .transition('set looping')
+            .transition('bounce', '2000ms');
+    </script>
+{% endblock %}

@@ -10,16 +10,17 @@ def home():
 
 @app.route('/login')
 def login():
-    return 'login page'
+    return render_template('loginpage.html')
 
 @app.route('/register')
 def register():
-    return 'register page'
+    return render_template('regiestepage.html')
+
 
 @app.route('/user/<username>')
 def user(username):
-    return 'user  '+username+'  page'
-
+    # return 'user  '+username+'  page'
+    return render_template('userpage.html')
 
 
 if __name__ == '__main__':
